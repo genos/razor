@@ -1,0 +1,16 @@
+(lang dune 3.8)
+
+(name razor)
+(license MIT)
+(authors "Graham Enos <graham.enos@gmail.com>")
+(maintainers "Graham Enos <graham.enos@gmail.com>")
+(generate_opam_files true)
+
+(package
+ (name razor)
+ (synopsis "Hutton's razor")
+ (depends
+   (ocaml (>= 5.0.0))
+   (alcotest (and :with-test (>= 1.7.0)))
+   (qcheck (and :with-test (>= 0.21.1)))
+   (qcheck-alcotest (and :with-test (>= 0.21.1)))))
