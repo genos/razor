@@ -6,10 +6,10 @@ authors: ["Graham Enos <graham.enos@gmail.com>"]
 license: "MIT"
 depends: [
   "dune" {>= "3.8"}
-  "ocaml" {>= "5.0.0"}
-  "alcotest" {with-test & >= "1.7.0"}
-  "qcheck" {with-test & >= "0.21.1"}
-  "qcheck-alcotest" {with-test & >= "0.21.1"}
+  "ocaml" {>= "5.3.0"}
+  "alcotest" {with-test & >= "1.9.0"}
+  "qcheck" {with-test & >= "0.26"}
+  "qcheck-alcotest" {with-test & >= "0.26"}
   "odoc" {with-doc}
 ]
 build: [

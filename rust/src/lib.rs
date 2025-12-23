@@ -64,10 +64,10 @@ pub fn run(ops: impl Iterator<Item = Code>) -> Option<u64> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use once_cell::sync::Lazy;
+    use std::sync::LazyLock;
     use proptest::prelude::*;
 
-    static EXPR: Lazy<Expr> = Lazy::new(|| {
+    static EXPR: LazyLock<Expr> = LazyLock::new(|| {
         Expr::Add(Box::new(ExprAdd {
             left: Expr::Val(1),
             right: Expr::Val(2),
@@ -92,7 +92,7 @@ mod tests {
         assert_eq!(Some(3), run(compile(&EXPR).into_iter()));
     }
 
-    static NEXTPR: Lazy<Expr> = Lazy::new(|| {
+    static NEXTPR: LazyLock<Expr> = LazyLock::new(|| {
         Expr::Add(Box::new(ExprAdd {
             left: Expr::Add(Box::new(ExprAdd {
                 left: Expr::Val(0),

@@ -1,5 +1,3 @@
-(ns razor)
-
 (def ^:const +expr+ '(1 2))
 (def ^:const +nextpr+ '((0 1) (2 3)))
 
@@ -28,7 +26,7 @@
           (cons (+ (first stack) (second stack)) (nthrest stack 2))))
       nil ops)))
 
-(run (comp- +expr+))
-(run (comp- +nextpr+))
-(-> +expr+ comp- run)
-(-> +nextpr+ comp- run)
+(println (run (comp- +expr+)))
+(println (run (comp- +nextpr+)))
+(println (-> +expr+ comp- run))
+(println (-> +nextpr+ comp- run))
